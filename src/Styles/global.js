@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
-import { TextField } from '@material-ui/core';
 
 export const theme = {
   verde: "#86C7A4",
@@ -13,6 +11,8 @@ export const theme = {
   azul2:"#0387D1",
   branco: "#FAFAFA",
   borderButton: "rgba(0, 0, 0, 0.5)",
+  texto:"#516373",
+  bege:"#F2F2F2"
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin : 0;
     box-sizing: border-box;
-    font-size: 16px;
+    color:${theme.texto};
   } 
 
   button {
@@ -35,14 +35,11 @@ export const GlobalStyle = createGlobalStyle`
   font-display: fallback; 
 }
   body {
-     /* background: ${props => props.theme.colors.background};
-     color: ${props => props.theme.colors.text}; */
+     color:${theme.azul};
      font-family:'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
   };
   html, border-style, #root {
-        max-height: 100vh;
-        max-width: 100vw;
-        width: 100%;
-        height: 100%;
+       
+        color:${theme.azul};
     }
 `;
