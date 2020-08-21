@@ -5,7 +5,13 @@ const Button = (props) => {
 
     return(
        
-       <ButtonStyled type="button" width={width} height={height}>           
+       <ButtonStyled type="submit" 
+          width={props.width} 
+          height={props.height}
+          left={props.left}
+          top={props.top}
+          onClick={props.red}
+       >           
          
          {props.title}
     
@@ -15,3 +21,4 @@ const Button = (props) => {
 
 };
 
+export default Button;

@@ -6,35 +6,14 @@ import { GridAlt,
          Message,
          AddressCard } from "../../Assets/Icons";
 
-
-export const StyledSection = styled.section `
-  width: inherit; 
-  color: ${theme.texto};
-  background-color: ${theme.branco};
-  display: flex; 
-  flex-direction: column;
-`
-export const SectionTitle = styled.div `
-
- margin: 70px auto 30px auto;
-    h2 {
-        font-size: 40px;
-        letter-spacing:-0.15px;
-        font-weight:100;
-    }
-
- 
-
-
-` 
-
 export const SideBar = styled.div`
-  margin-top:0;
+  position:absolute;
+  top:0;
   width:20%;
-  max-height:100%;
   display: 'flex';
   flex-direction: column;
   color: "#8DD4E3";
+  gap:10px;
   background-color:${theme.bege};
 
     img {
@@ -43,26 +22,23 @@ export const SideBar = styled.div`
     }
     ul {
      
-      margin-top: 12vh;
+      margin-top: 10vh;
       height: 100%;
-      padding-bottom: 26vh;
       list-style-type: none;
       background-color: ${(props) => props.bgColor};
+      margin-top: 7vh;
+      height: 100%;
+      margin-bottom: 19vh;
     }
 
        li {
 
-        
           color:"#516373";
           font-size:1.6rem;
           font-weight:450;
-          padding: 20px  20px 40px;
+          padding: 28px 20px 34px;
       }
-
-
 `
-
-
 const iconCSS = css `
   width:31px;
   height:31px;

@@ -9,9 +9,7 @@ import { SideBar,
          ClientsIcon,
          FinancialIcon,
          MessageIcon,
-         IdCardIcon,
-         SectionTitle,
-         StyledSection} from "./styled"; 
+         IdCardIcon} from "./styled"; 
 
 class Menu extends React.Component {
   state = {
@@ -21,17 +19,9 @@ class Menu extends React.Component {
 
   render() {
     const {  redirecttoDashBoard, redirecttoClients ,
-             bgColor, color, colorClients, title } = this.props;
+             bgColor, color, colorClients} = this.props;
    
     return (
-
-      <StyledSection>
-
-        <SectionTitle> 
-          <h2> {title}</h2>
- 
-        </SectionTitle>
-         
         <SideBar>
           <img src={require("../../Assets/logo.png")} />
           <ul bgColor={bgColor}>
@@ -49,12 +39,12 @@ class Menu extends React.Component {
 
               {colorClients ?
                 ( <li style={{backgroundColor:"#FAFAFA"}}
-                    onClick={redirecttoClients }
+                    onClick={redirecttoClients}
                   >
                     <ClientsIcon /> Clientes</li>
                 ) : (
                   <li  style={{backgroundColor:"#F2F2F2"}}
-                  onClick={redirecttoClients }
+                  onClick={redirecttoClients}
               >
                 <ClientsIcon /> Clientes</li>)
             }
@@ -62,7 +52,7 @@ class Menu extends React.Component {
                 <IdCardIcon /> Colaboradores
               </li>
               <li>
-                < FinancialIcon /> Financeiro
+                <FinancialIcon /> Financeiro
               </li>
               <li>
               <MessageIcon /> Mensagens
@@ -70,7 +60,7 @@ class Menu extends React.Component {
 
           </ul>
         </SideBar>  
-      </StyledSection>
+   
     );
   }
 }

@@ -2,6 +2,7 @@ import { createBrowserHistory } from "history";
 import { createStore, applyMiddleware, compose } from "redux";
 import { routerMiddleware } from "connected-react-router";
 import { generateReducers } from "../Reducers"
+import CssBaseline from '@material-ui/core/CssBaseline';
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import  Router  from "../Containers/Router";
@@ -28,6 +29,7 @@ const App = () => (
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
+          < CssBaseline />
           <Router history={history} />
         </ThemeProvider>
       </Provider>
