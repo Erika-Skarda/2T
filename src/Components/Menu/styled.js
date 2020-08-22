@@ -10,11 +10,13 @@ export const SideBar = styled.div`
   position:absolute;
   top:0;
   width:20%;
+  min-height:100vh;
   display: 'flex';
   flex-direction: column;
   color: "#8DD4E3";
   gap:10px;
   background-color:${theme.bege};
+  margin-top:0;
 
     img {
 
@@ -28,7 +30,7 @@ export const SideBar = styled.div`
       background-color: ${(props) => props.bgColor};
       margin-top: 7vh;
       height: 100%;
-      margin-bottom: 19vh;
+      margin-bottom: 40vh;
     }
 
        li {

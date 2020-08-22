@@ -8,15 +8,13 @@ import Header from "../../../Components/Header";
 import CustomizedTablesClients from '../../../Components/ClientTable'
 import Button from "../../../Components/Button";
 //Estilização
-import { Container} from './styled';
-import { Table } from "../../../Components/TableStyle/styled";
-
+import { Container, Table} from './styled';
 
 class Clientes extends Component {
   
   render() {
 
-    const { redirecttoAddClients } = this.props;
+  const { redirecttoAddClients } = this.props;
   return (
  
          <Container>
