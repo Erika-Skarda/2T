@@ -5,9 +5,9 @@ import Menu from  "../../../Components/Menu";
 import Header from "../../../Components/Header";
 import CustomizedTables from '../../../Components/Table'
 //Estilização
-import { Container } from './styled';
+import { Container, Table } from './styled';
 import { theme } from "../../../Styles/global";
-import { Table } from "../../../Components/TableStyle/styled";
+
 
 function DashBoard() {
 
