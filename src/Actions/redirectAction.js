@@ -26,3 +26,11 @@ export const redirecttoAddClients = () => async(dispatch) => {
       alert("Ocorreu um erro inesperado. Tente novamente")
   }
 }
+
+export const redirecttoUpDateClient = () => async(dispatch) => {
+  try {
+      dispatch(push(routes.update))
+  } catch {
+      alert("Ocorreu um erro inesperado. Tente novamente")
+  }
+}

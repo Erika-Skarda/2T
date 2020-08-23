@@ -14,9 +14,8 @@ export const Table = styled.div`
     padding:10px;
 
       header {
-        margin-left:0;
+        margin:-10px -10px 0 -10px;
         background-color:${theme.azul2};
-        margin-top:0;
         height:5vh;
         border-radius: 5px 5px 0 0 ;
       }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { toggleStatus } from "../../Actions/actions";
+import { bindActionCreators } from "redux";
+import * as redirectAction from "../../Actions/redirectAction";
 //Material-ui
 import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
@@ -13,16 +15,16 @@ import { StyledTableCell,
 
 import Switch from "react-switch";
 
-function createData(status, name, cpf, contato, tipo, data ) {
-   return { status, name, cpf, contato, tipo, data };
+function createData( id, status, name, cpf, contato, tipo, data ) {
+   return { id, status, name, cpf, contato, tipo, data };
  }
 
  const rows = [
-   createData(false, 'Erika', "66.587.156/0001-29","(11) 4119-3000", "Pessoa Jurídica", "10/10/2020"),
-   createData(false, 'Gabriela', "66.587.156/0001-29", "(11) 4119-3000","Pessoa Jurídica", "10/10/2020"),
-   createData(false, 'João', "70306008513","(11) 4119-3000", "Pessoa Física", "10/10/2020"),
-   createData(true, 'Ivana', "66.587.156/0001-29","(11) 4119-3000", "Pessoa Jurídica", "10/10/2020"),
-   createData(false, 'Amanda', "70306008513","(11) 4119-3000", "Pessoa Física", "10/10/2020"),
+   createData("1", false, 'Erika', "66.587.156/0001-29","(11) 4119-3000", "Pessoa Jurídica", "10/10/2020"),
+   createData("2", true, 'Gabriela', "66.587.156/0001-29", "(11) 4119-3000","Pessoa Jurídica", "10/10/2020"),
+   createData("3", false, 'João', "70306008513","(11) 4119-3000", "Pessoa Física", "10/10/2020"),
+   createData("4", true, 'Ivana', "66.587.156/0001-29","(11) 4119-3000", "Pessoa Jurídica", "10/10/2020"),
+   createData("5", false, 'Amanda', "70306008513","(11) 4119-3000", "Pessoa Física", "10/10/2020"),
   ];
 
 
@@ -38,6 +40,7 @@ class CustomizedTablesClients extends React.Component {
   }
 
  render(){
+  const { redirecttoUpDateClient } =this.props;
   return (
     
       <StyledTable aria-label="customized table">
@@ -52,7 +55,7 @@ class CustomizedTablesClients extends React.Component {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <StyledTableRow  key={row.name}>
               <TableCell3 component="th" scope="row">
               <Switch 
@@ -64,7 +67,9 @@ class CustomizedTablesClients extends React.Component {
                 checked={row.status} 
               />
               </TableCell3>
-              <TableCell3 align="right">{row.name}</TableCell3>
+              {row.id != 1 ? (<TableCell3 align="right">{row.name}</TableCell3>
+              ) : ( 
+              <TableCell3 align="right" onClick={redirecttoUpDateClient}>{row.name}</TableCell3>)}
               <TableCell3 align="right">{row.cpf}</TableCell3>
               <TableCell3 align="right">{row.contato}</TableCell3>
               <TableCell3 align="right">{row.tipo}</TableCell3>
@@ -85,12 +90,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-
-    toggleStatus: id => dispatch(toggleStatus(id))
- 
-  };
-};
+const mapDispatchToProps = (dispatch) => 
+    bindActionCreators(redirectAction,dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(CustomizedTablesClients);
