@@ -1,12 +1,8 @@
 
-
-
-
-
 # Eagle :bird:
-
+<p align="center">
 https://www.loom.com/share/2e37931816e347a2aad063d21355d73c
-
+</p> 
 </br>
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT" />
