@@ -3,7 +3,6 @@ import { theme } from "../../../../Styles/global"
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
 
 export const Container = styled.div`
 
@@ -64,12 +63,6 @@ export const Title = styled.div`
   display:block;
   margin-bottom: 10px;
   margin-top: 10px;
-
-    h2 {
-
-     
-
-    }
 `
 export const WrapperAdress = styled.div`
 

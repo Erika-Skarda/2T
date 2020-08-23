@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled  from 'styled-components'
 import { theme } from "../../../Styles/global";
+
 
 export const Container = styled.div`
 
@@ -8,7 +9,7 @@ export const Container = styled.div`
 
 `
 export const Table = styled.div`
-    height:75vh;
+    height:65vh;
     width: 75vw;
     border-radius: 5px;
     z-index: 1;
@@ -20,9 +21,8 @@ export const Table = styled.div`
     padding:10px;
 
       header {
-        margin-left:0;
+        margin:-10px -10px 0 -10px;
         background-color:${theme.azul2};
-        margin-top:0;
         height:5vh;
         border-radius: 5px 5px 0 0 ;
       }

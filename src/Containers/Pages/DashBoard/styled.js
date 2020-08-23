@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 `
 export const Table = styled.div`
-    height:75vh;
+    height:70vh;
     width: 75vw;
     border-radius: 5px;
     z-index: 1;
@@ -26,5 +26,14 @@ export const Table = styled.div`
         height:5vh;
         border-radius: 5px 5px 0 0 ;
       }
+
+`
+export const WrapperGraphics = styled.div`
+
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  justify-items: center;
+  margin-top:45px;
+
 
 `

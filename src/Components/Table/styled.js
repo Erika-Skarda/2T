@@ -42,7 +42,7 @@ export const StyledTable = withStyles((theme) => ({
       width: "94%",
       marginLeft: "2.3vw",
       display: "table",
-      marginTop: "275px"
+      marginTop: "50px"
      
     },
     body: {

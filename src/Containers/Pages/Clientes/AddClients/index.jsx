@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 //Componentes
 import Header from '../../../../Components/Header'
 import Menu from  "../../../../Components/Menu";
@@ -102,7 +102,13 @@ const { form, onChange, resetForm } = useForm({
   rua:"",
   cidade:"",
   numero:"",
-  uf:""
+  uf:"",
+
+  razao:"",
+  nome_fantasia:"",
+  data_de_abertura:"",
+  cnpj:"",
+  ie:""
 });
 
 const handleInputChange = event => {
@@ -176,11 +182,8 @@ const handleInputChange = event => {
                   variant="outlined" 
                   margin="normal"
                   width="30vw"
-
-                
                 />
               </div>
-
               <div style={{display:"flex" , flexDirection:"column"}}>
                 <label shrink htmlFor="apelido">
                   Apelido
@@ -441,7 +444,289 @@ const handleInputChange = event => {
               /> 
          </Form>
          </WrapperForm1>
-         ) : <div>Gabi é vacilona = Joao é vacilão = Ivana é vacilona</div>}
+         ) : (
+          <WrapperForm1>
+          <Form onSubmit={handleSubmit}>
+           <Title>
+            <h2>Dados pessoais</h2>
+            <small>Os campos com * são obrigatórios</small> 
+           </Title>
+            <Div>
+              <div style={{display:"flex" , flexDirection:"column", marginLeft:"10px"}}>
+                <label required  htmlFor="razao">
+                  Razão Social *
+                </label>
+                <TextFieldStyled
+                  value={form.razao}
+                  onChange={handleInputChange}
+                  name="razao"
+                  id="razao"
+                  type="text"
+                  required 
+                  inputProps={{ 
+                    pattern: "[A-Za-z ]{3,}", 
+                    title: "O nome deve conter 3 letras no mínimo" 
+                  }}
+                  variant="outlined" 
+                  margin="normal"
+                  width="30vw"
+                />
+              </div>
+
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="nome_fantasia">
+                  Nome Fantasia
+                </label>
+                <TextFieldStyled
+                  value={form.nome_fantasia}
+                  onChange={handleInputChange}
+                  name="nome_fantasia"
+                  id="nome_fantasia"
+                  type="text"
+                  inputProps={{ 
+                    pattern: "[A-Za-z ]{3,}", 
+                    title: "O nome deve conter 3 letras no mínimo" 
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  width="15vw"   
+                />
+              </div>
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label required = {true} shrink htmlFor="dominio">
+                  Domínio *
+                </label>
+                <TextFieldStyled
+                  value={form.dominio}
+                  onChange={handleInputChange}
+                  name="dominio"
+                  id="dominio"
+                  type="text"
+                  required = {true}
+                  inputProps={{ 
+                    pattern: "[A-Za-z ]{3,}", 
+                    title: "O nome deve conter 3 letras no mínimo" 
+                  }}
+                  variant="outlined" 
+                  margin="normal"
+                  width="15vw"
+                />  
+              </div>
+             </Div>
+             <Div>
+             <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="data_de_abertura">
+                  Data de Abertura
+                </label>
+                <TextFieldStyled
+                  value={form.data_de_abertura}
+                  onChange={handleInputChange}
+                  name="data_de_abertura"
+                  id="data_de_abertura"
+                  type="date"
+                  variant="outlined"
+                  margin="normal"
+                  width="15vw"   
+                />
+              </div>
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="cnpj">
+                  CNPJ *
+                </label>
+                <TextFieldStyled
+                  value={form.cnpj}
+                  onChange={handleInputChange}
+                  name="cnpj"
+                  id="cnpj"
+                  type="text"
+                  inputProps={{ 
+                    pattern:"/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/" ,
+			              title:"Digite um CNPJ no formato: xx.xxx.xxx/0001-??"
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  width="14.7vw"  
+                />
+              </div>
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="ie">
+                  IE
+                </label>
+                <TextFieldStyled
+                  value={form.ie}
+                  onChange={handleInputChange}
+                  name="ie"
+                  id="ie"
+                  type="text"
+                  variant="outlined" 
+                  margin="normal"
+                  width="15vw"
+                />  
+              </div>
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="telefone">
+                  Telefone Principal *
+                </label>
+                <TextFieldStyled
+                  value={form.telefone}
+                  onChange={handleInputChange}
+                  name="telefone"
+                  id="telefone"
+                  type="tel"
+                  required={true}
+                  inputProps={{ 
+                    pattern: "\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" , 
+                    title: "Digite um telefone válido"
+                  }}
+                  variant="outlined" 
+                  margin="normal"
+                  width="15vw"
+                />  
+              </div>
+             </Div>
+             < Title>
+              <h2>Dados De Acesso</h2>
+              <small>Os campos com * são obrigatórios</small> 
+             </Title>
+             <Div>
+              <div style={{display:"flex" , flexDirection:"column", marginLeft:"10px"}}>
+                <label required  htmlFor="admin">
+                  Usuário Administrador *
+                </label>
+                <TextFieldStyled
+                  value={form.admin}
+                  onChange={handleInputChange}
+                  name="admin"
+                  id="admin"
+                  type="text"
+                  required 
+                  inputProps={{ 
+                    pattern: "[A-Za-z ]{3,}", 
+                    title: "O nome deve conter 3 letras no mínimo" 
+                  }}
+                  variant="outlined" 
+                  margin="normal"
+                  width="15vw"
+                />
+              </div>
+
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="senha">
+                  Senha *
+                </label>
+                <TextFieldStyled
+                  value={form.senha}
+                  onChange={handleInputChange}
+                  name="senha"
+                  id="senha"
+                  type="password"
+                  inputProps={{ 
+                    pattern:"[A-Za-z0-9]{6,10}",
+                    title:"Digite no mínimo 6 caracteres"
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  width="15vw"
+                />
+              </div>
+              <div style={{display:"flex" , flexDirection:"column"}}>
+                <label shrink htmlFor="confirmar">
+                  Confirmar Senha *
+                </label>
+                <TextFieldStyled
+                  value={form.rg}
+                  onChange={handleInputChange}
+                  name="corfirmar"
+                  id="confirmar"
+                  type="password"
+                  inputProps={{ 
+                    pattern:"[A-Za-z0-9]{6,10}",
+                    title:"Digite no mínimo 6 caracteres"
+                  }}
+                  variant="outlined" 
+                  margin="normal"
+                  width="15vw"
+                />  
+              </div>
+             </Div>
+             <Title>
+                <h2>Informações Adicionais</h2>
+                <small>Os campos com * são obrigatórios</small> 
+             </Title>
+             <>
+             <Div>
+             {createAddress.map(field => (
+              <TextFieldStyled
+                key={field.name}
+                name={field.name}
+                type={field.type}
+                value={form[field.name] || ""} 
+                placeholder={field.placeholder}
+                label={field.label}
+                required={field.required}
+                onChange={handleInputChange}
+                variant="outlined"
+                margin="normal"
+                width="15vw"
+                InputProps={{
+                  endAdornment: field.endAdornment,
+                  inputProps: {
+                      pattern: field.pattern,
+                      title: field.title
+                  }
+                }}
+              
+            /> ))}
+            </Div>
+            <Div>
+             {createAddress2.map(field => (
+              <TextFieldStyled
+                key={field.name}
+                name={field.name}
+                type={field.type}
+                value={form[field.name] || ""} 
+                placeholder={field.placeholder}
+                label={field.label}
+                required={field.required}
+                onChange={handleInputChange}
+                variant="outlined"
+                margin="small"
+                width="15vw"
+                InputProps={{
+                  endAdornment: field.endAdornment,
+                  inputProps: {
+                      pattern: field.pattern,
+                      title: field.title
+                  }
+                }}
+              
+            /> ))}
+            </Div>
+            <ButtonMaterial>
+              Adicionar Endereço
+            </ButtonMaterial>
+           </>
+            <WrapperAdress style={{display:"flex" , flexDirection:"column"}}>
+              <h4>Endereços Cadastrados</h4>
+              <div>
+                <ul>
+                  <li>CEP</li>
+                  <li>Bairro</li>
+                  <li>Rua</li>
+                  <li>Cidade</li>
+                </ul>
+              </div>
+            </WrapperAdress>
+               <Button 
+                title="Salvar Dados"
+                width="150px"
+                height="37px"
+                left="58.7vw"
+                top="95.5vh"
+              /> 
+         </Form>
+         </WrapperForm1>
+         )}
         </WrapperForm>
       </Table>
 
