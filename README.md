@@ -1,18 +1,21 @@
 
 # Eagle :bird:
+
+## Vídeo movie_camera:	
+
 <p align="center">
 https://www.loom.com/share/2e37931816e347a2aad063d21355d73c
 </p> 
 </br>
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT" />
-    <img src="https://img.shields.io/static/v1?label=react&message=framework&color=purple&style=for-the-badge&logo=REDUX" />
-    <img src="https://img.shields.io/static/v1?label=material-ui&message=library&color=blue&style=for-the-badge&logo=MATERIAL-UI"/>
+    <img src="https://img.shields.io/static/v1?label=redux&message=framework&color=purple&style=for-the-badge&logo=REDUX" />
+    <img src="https://img.shields.io/static/v1?label=material-ui&message=library&color=green&style=for-the-badge&logo=MATERIAL-UI"/>
 </p>  
 
 <p align="center">
    <img src="https://img.shields.io/static/v1?label=javascript&message=language&color=yellow&style=for-the-badge&logo=JAVASCRIPT"/>
-   <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=HOOKS" />
+   <img src="https://img.shields.io/static/v1?label=hooks&message=framework&color=blue&style=for-the-badge&logo=HOOKS" />
    <img src="https://img.shields.io/static/v1?label=styled-component&message=library&color=pink&style=for-the-badge&logo=STYLED-COMPONENTS"/>
 </p> 
 </br>
