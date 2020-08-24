@@ -35,7 +35,7 @@ Replicação feita em React do projeto Eagle da empresa 2T informática
 ## Deploy
 
 <p align="justify">
-  O deploy do projeto foi realizado no vercel e encontra-se disponivel em: <b><a target="blank href="organic-trouble.surge.sh">organic-trouble.surge.sh</a></b>
+  O deploy do projeto foi realizado no surge e encontra-se disponivel em: <b><a target="blank href="organic-trouble.surge.sh">elfin-protest.surge.sh</a></b>
 </p>
 
 ## Pré-requisitos
